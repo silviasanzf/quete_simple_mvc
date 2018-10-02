@@ -1,15 +1,15 @@
 <?php
 namespace Controller;
 
-use Model\categoryManager;
+use Model\CategoryManager;
 
 
-class categoryController
+class CategoryController
 {
     public function index() 
     {
         
-        $categoryManager= new categoryManager();
+        $categoryManager= new CategoryManager();
         $categories=$categoryManager->selectAllCategories(); 
         require __DIR__ . '/../View/category.php'; 
         
@@ -18,7 +18,7 @@ class categoryController
     public function show(int $id)
     {
         
-            $categoryManager = new categoryManager();
+            $categoryManager = new CategoryManager();
             $category = $categoryManager->selectOneCategory($id);
         
             require __DIR__ . '/../View/showCategory.php';

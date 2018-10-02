@@ -4,7 +4,7 @@ namespace Model;
 // src/Model/ItemManager.php
 require __DIR__ . '/../../app/db.php';
 
-class categoryManager
+class CategoryManager
 {
 
 // récupération de tous les items
