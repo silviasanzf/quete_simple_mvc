@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+
+
+{% block title %}Delete Item{% endblock %}
+
+{% block content %}
+    <h1>Delete Item</h1>
+    <h3>Your item : {{ item.title }}</h3>
+    <form action="" method="post">
+        <input type="submit" name="submit" value="delete item">
+    </form>
+    <br>
+    <a href='/'>Back to list</a>
+{% endblock %}
+
+{% block error %}{{ error }}{% endblock %}

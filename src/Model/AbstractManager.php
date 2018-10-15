@@ -1,6 +1,7 @@
 <?php
-namespace Model;
 
+
+namespace Model;
 use App\Connection;
 
 abstract class AbstractManager

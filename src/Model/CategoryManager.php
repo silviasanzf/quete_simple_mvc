@@ -1,28 +1,18 @@
 <?php
+
 namespace Model;
 
 
-class CategoryManager
+class CategoryManager extends AbstractManager
 {
+    const TABLE = 'category';
 
-// récupération de tous les items
-public function selectAllCategories() :array
-{
+    public function __construct($pdo)
+    {
+        parent::__construct(self::TABLE, $pdo);
+    }
 
-    $query = "SELECT * FROM category";
-    $res = $pdo->query($query);
-    return $res->fetchAll();
+
 }
 
-public function selectOneCategory(int $id) : array
-{
 
-    $query = "SELECT * FROM category WHERE id = :id";
-    $statement = $pdo->prepare($query);
-    $statement->bindValue(':id', $id, \PDO::PARAM_INT);  
-    $statement->execute();
-    // contrairement à fetchAll(), fetch() ne renvoie qu'un seul résultat
-    return $statement->fetch();
-
-}
-}
